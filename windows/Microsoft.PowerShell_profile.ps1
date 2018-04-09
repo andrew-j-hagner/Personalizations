@@ -1,11 +1,9 @@
-﻿
-Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-7d93c81\src\posh-git.psd1'
-
-# Chocolatey profile
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-  Import-Module "$ChocolateyProfile"
+﻿if (-Not(Get-Module -ListAvailable -Name posh-git)) {
+    // Requires Powershell 5+
+    PowerShellGet\Install-Module posh-git -Scope CurrentUser
 }
+
+Import-Module posh-git
 
 function global:prompt {
 
