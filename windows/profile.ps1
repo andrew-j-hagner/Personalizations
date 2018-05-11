@@ -56,3 +56,6 @@ function global:prompt {
     $global:LASTEXITCODE = $realLASTEXITCODE
     return "`n> "
 }
+
+function ExplorerHere { explorer.exe . }
+Set-Alias "o" ExplorerHere
