@@ -1,9 +1,23 @@
-# Instructions
-1. [Choco](https://chocolatey.org/)
-1. [ConEmu](https://conemu.github.io/)
-1. [PoshGit](https://github.com/dahlbyk/posh-git)
-1. Copy powershell profile to `$profile.CurrentUserAllHosts`
+# Powershell
 
-## Optional
-* [VS Spell Checker](https://marketplace.visualstudio.com/items?itemName=EWoodruff.VisualStudioSpellCheckerVS2017andLater)
-* Nuget CmdLine `choco install nuget.commandline`
+`
+$DocumentsPath = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::MyDocuments)
+Copy-Item "profile.ps1" -Destination "$DocumentsPath\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
+`
+
+`Set-ExecutionPolicy Bypass -Scope CurrentUser -Force`
+
+`iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
+
+`choco install dotnetcore -y`
+
+`choco install git -y --params "/NoAutoCrlf"
+
+`choco install conemu -y`
+
+`choco install powershell-core -y`
+
+`choco install vscode -y --params "/NoDesktopIcon /NoQuicklaunchIcon"`
+
+Profile file path:
+`C:\Users\AndrewHagner\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
