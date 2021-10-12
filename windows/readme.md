@@ -11,3 +11,16 @@ Enable Windows Subsystem Linux under Settings > Apps > Optional Features > More 
 Install Ubuntu from Windows Store, launch to install, setup local/local user
 
 Install Git on Windows: https://git-scm.com/
+
+## Adding exe's to path
+
+e.g. terraform
+
+Run powershell as admin:
+
+    $old = (Get-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name path).path
+
+    $new  =  "$old;<<FOLDER PATH HERE>>"
+
+    Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name path -Value $new
+
