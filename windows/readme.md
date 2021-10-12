@@ -1,23 +1,13 @@
-# Powershell
+# Windows Setup
 
-`
-$DocumentsPath = [System.Environment]::GetFolderPath([System.Environment+SpecialFolder]::MyDocuments)
-Copy-Item "profile.ps1" -Destination "$DocumentsPath\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
-`
+Get Windows Terminal
 
-`Set-ExecutionPolicy Bypass -Scope CurrentUser -Force`
+(Windows Term Basics: https://www.youtube.com/watch?v=2dsnwlnNBzs)
 
-`iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))`
+Powershell Core: https://github.com/PowerShell/PowerShell
 
-`choco install dotnetcore -y`
+Enable Windows Subsystem Linux under Settings > Apps > Optional Features > More Windows Features
 
-`choco install git -y --params "/NoAutoCrlf"
+Install Ubuntu from Windows Store, launch to install, setup local/local user
 
-`choco install conemu -y`
-
-`choco install powershell-core -y`
-
-`choco install vscode -y --params "/NoDesktopIcon /NoQuicklaunchIcon"`
-
-Profile file path:
-`C:\Users\AndrewHagner\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
+Install Git on Windows: https://git-scm.com/
