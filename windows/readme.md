@@ -24,3 +24,7 @@ Run powershell as admin:
 
     Set-ItemProperty -Path 'Registry::HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Session Manager\Environment' -Name path -Value $new
 
+## VS Code - Render Whitespace
+
+`Ctrl+,` to open settings, search for whitespace.
+
